@@ -1,0 +1,17 @@
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\Tax Calculator\Tax Calculator\bin\Debug\net8.0-windows\Tax Calculator.exe
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\Tax Calculator\Tax Calculator\bin\Debug\net8.0-windows\Tax Calculator.deps.json
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\Tax Calculator\Tax Calculator\bin\Debug\net8.0-windows\Tax Calculator.runtimeconfig.json
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\Tax Calculator\Tax Calculator\bin\Debug\net8.0-windows\Tax Calculator.dll
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\Tax Calculator\Tax Calculator\bin\Debug\net8.0-windows\Tax Calculator.pdb
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\Tax Calculator\Tax Calculator\obj\Debug\net8.0-windows\Tax_Calculator.Form1.resources
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\Tax Calculator\Tax Calculator\obj\Debug\net8.0-windows\Tax Calculator.csproj.GenerateResource.cache
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\Tax Calculator\Tax Calculator\obj\Debug\net8.0-windows\Tax Calculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\Tax Calculator\Tax Calculator\obj\Debug\net8.0-windows\Tax Calculator.AssemblyInfoInputs.cache
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\Tax Calculator\Tax Calculator\obj\Debug\net8.0-windows\Tax Calculator.AssemblyInfo.cs
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\Tax Calculator\Tax Calculator\obj\Debug\net8.0-windows\Tax Calculator.csproj.CoreCompileInputs.cache
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\Tax Calculator\Tax Calculator\obj\Debug\net8.0-windows\Tax Calculator.sourcelink.json
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\Tax Calculator\Tax Calculator\obj\Debug\net8.0-windows\Tax Calculator.dll
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\Tax Calculator\Tax Calculator\obj\Debug\net8.0-windows\refint\Tax Calculator.dll
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\Tax Calculator\Tax Calculator\obj\Debug\net8.0-windows\Tax Calculator.pdb
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\Tax Calculator\Tax Calculator\obj\Debug\net8.0-windows\Tax Calculator.genruntimeconfig.cache
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\Tax Calculator\Tax Calculator\obj\Debug\net8.0-windows\ref\Tax Calculator.dll
