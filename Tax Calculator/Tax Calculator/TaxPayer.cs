@@ -61,6 +61,7 @@ namespace Tax_Calculator
 
         public void CalculateTax()
         {
+<<<<<<< HEAD
             this.IncomeTax = this.CalcFedTax() + this.CalcProvTax();
         }
 
@@ -98,6 +99,10 @@ namespace Tax_Calculator
                 }
             }
             return provTax;
+=======
+            this.IncomeTax = 100;
+            this.MarginalTaxRate = 2;
+>>>>>>> origin/main
         }
 
         #endregion
