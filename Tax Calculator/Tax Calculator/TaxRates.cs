@@ -8,6 +8,6 @@ namespace Tax_Calculator
 {
     internal class TaxRates
     {
-        //private readonly double[] Canada = ;
+        public static readonly double[] Canada = ;
     }
 }

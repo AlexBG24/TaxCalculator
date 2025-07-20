@@ -1,2 +1,10 @@
 
 *.vsidx
+
+*.json
+
+*.v2
+
+Tax Calculator/.vs/Tax Calculator/v17/.suo
+
+*.cache

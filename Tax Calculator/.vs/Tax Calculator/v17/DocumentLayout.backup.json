@@ -7,16 +7,32 @@
       "RelativeMoniker": "D:0:0:{F1077F0D-4A4E-4A5D-A46C-A05BF8244AD4}|Tax Calculator\\Tax Calculator.csproj|solutionrelative:tax calculator\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F1077F0D-4A4E-4A5D-A46C-A05BF8244AD4}|Tax Calculator\\Tax Calculator.csproj|c:\\users\\alexb\\documents\\code projects\\taxcalculator\\tax calculator\\tax calculator\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1077F0D-4A4E-4A5D-A46C-A05BF8244AD4}|Tax Calculator\\Tax Calculator.csproj|solutionrelative:tax calculator\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F1077F0D-4A4E-4A5D-A46C-A05BF8244AD4}|Tax Calculator\\Tax Calculator.csproj|c:\\users\\alexb\\documents\\code projects\\taxcalculator\\tax calculator\\tax calculator\\taxrates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1077F0D-4A4E-4A5D-A46C-A05BF8244AD4}|Tax Calculator\\Tax Calculator.csproj|solutionrelative:tax calculator\\taxrates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F1077F0D-4A4E-4A5D-A46C-A05BF8244AD4}|Tax Calculator\\Tax Calculator.csproj|c:\\users\\alexb\\documents\\code projects\\taxcalculator\\tax calculator\\tax calculator\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F1077F0D-4A4E-4A5D-A46C-A05BF8244AD4}|Tax Calculator\\Tax Calculator.csproj|solutionrelative:tax calculator\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F1077F0D-4A4E-4A5D-A46C-A05BF8244AD4}|Tax Calculator\\Tax Calculator.csproj|c:\\users\\alexb\\documents\\code projects\\taxcalculator\\tax calculator\\tax calculator\\taxrates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1077F0D-4A4E-4A5D-A46C-A05BF8244AD4}|Tax Calculator\\Tax Calculator.csproj|solutionrelative:tax calculator\\taxrates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F1077F0D-4A4E-4A5D-A46C-A05BF8244AD4}|Tax Calculator\\Tax Calculator.csproj|c:\\users\\alexb\\documents\\code projects\\taxcalculator\\tax calculator\\tax calculator\\taxpayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1077F0D-4A4E-4A5D-A46C-A05BF8244AD4}|Tax Calculator\\Tax Calculator.csproj|solutionrelative:tax calculator\\taxpayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1077F0D-4A4E-4A5D-A46C-A05BF8244AD4}|Tax Calculator\\Tax Calculator.csproj|c:\\users\\alexb\\documents\\code projects\\taxcalculator\\tax calculator\\tax calculator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1077F0D-4A4E-4A5D-A46C-A05BF8244AD4}|Tax Calculator\\Tax Calculator.csproj|solutionrelative:tax calculator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1077F0D-4A4E-4A5D-A46C-A05BF8244AD4}|Tax Calculator\\Tax Calculator.csproj|c:\\users\\alexb\\documents\\code projects\\taxcalculator\\tax calculator\\tax calculator\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1077F0D-4A4E-4A5D-A46C-A05BF8244AD4}|Tax Calculator\\Tax Calculator.csproj|solutionrelative:tax calculator\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1077F0D-4A4E-4A5D-A46C-A05BF8244AD4}|Tax Calculator\\Tax Calculator.csproj|c:\\users\\alexb\\documents\\code projects\\taxcalculator\\tax calculator\\tax calculator\\utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1077F0D-4A4E-4A5D-A46C-A05BF8244AD4}|Tax Calculator\\Tax Calculator.csproj|solutionrelative:tax calculator\\utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1077F0D-4A4E-4A5D-A46C-A05BF8244AD4}|Tax Calculator\\Tax Calculator.csproj|c:\\users\\alexb\\documents\\code projects\\taxcalculator\\tax calculator\\tax calculator\\warningform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1077F0D-4A4E-4A5D-A46C-A05BF8244AD4}|Tax Calculator\\Tax Calculator.csproj|solutionrelative:tax calculator\\warningform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +42,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WarningForm.cs",
+              "DocumentMoniker": "C:\\Users\\alexb\\Documents\\Code Projects\\TaxCalculator\\Tax Calculator\\Tax Calculator\\WarningForm.cs",
+              "RelativeDocumentMoniker": "Tax Calculator\\WarningForm.cs",
+              "ToolTip": "C:\\Users\\alexb\\Documents\\Code Projects\\TaxCalculator\\Tax Calculator\\Tax Calculator\\WarningForm.cs",
+              "RelativeToolTip": "Tax Calculator\\WarningForm.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAqwBEAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T07:48:45.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\alexb\\Documents\\Code Projects\\TaxCalculator\\Tax Calculator\\Tax Calculator\\Program.cs",
+              "RelativeDocumentMoniker": "Tax Calculator\\Program.cs",
+              "ToolTip": "C:\\Users\\alexb\\Documents\\Code Projects\\TaxCalculator\\Tax Calculator\\Tax Calculator\\Program.cs",
+              "RelativeToolTip": "Tax Calculator\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T05:51:27.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "TaxPayer.cs",
+              "DocumentMoniker": "C:\\Users\\alexb\\Documents\\Code Projects\\TaxCalculator\\Tax Calculator\\Tax Calculator\\TaxPayer.cs",
+              "RelativeDocumentMoniker": "Tax Calculator\\TaxPayer.cs",
+              "ToolTip": "C:\\Users\\alexb\\Documents\\Code Projects\\TaxCalculator\\Tax Calculator\\Tax Calculator\\TaxPayer.cs",
+              "RelativeToolTip": "Tax Calculator\\TaxPayer.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAADwv18AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T23:35:30.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "TaxRates.cs",
               "DocumentMoniker": "C:\\Users\\alexb\\Documents\\Code Projects\\TaxCalculator\\Tax Calculator\\Tax Calculator\\TaxRates.cs",
               "RelativeDocumentMoniker": "Tax Calculator\\TaxRates.cs",
@@ -43,13 +98,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
+              "Title": "Utilities.cs",
+              "DocumentMoniker": "C:\\Users\\alexb\\Documents\\Code Projects\\TaxCalculator\\Tax Calculator\\Tax Calculator\\Utilities.cs",
+              "RelativeDocumentMoniker": "Tax Calculator\\Utilities.cs",
+              "ToolTip": "C:\\Users\\alexb\\Documents\\Code Projects\\TaxCalculator\\Tax Calculator\\Tax Calculator\\Utilities.cs",
+              "RelativeToolTip": "Tax Calculator\\Utilities.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T23:29:15.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\alexb\\Documents\\Code Projects\\TaxCalculator\\Tax Calculator\\Tax Calculator\\Form1.cs",
               "RelativeDocumentMoniker": "Tax Calculator\\Form1.cs",
               "ToolTip": "C:\\Users\\alexb\\Documents\\Code Projects\\TaxCalculator\\Tax Calculator\\Tax Calculator\\Form1.cs",
               "RelativeToolTip": "Tax Calculator\\Form1.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAADwvyUAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFMAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-19T22:14:18.907Z",
               "EditorCaption": ""
@@ -62,7 +130,7 @@
               "RelativeDocumentMoniker": "Tax Calculator\\Form1.Designer.cs",
               "ToolTip": "C:\\Users\\alexb\\Documents\\Code Projects\\TaxCalculator\\Tax Calculator\\Tax Calculator\\Form1.Designer.cs",
               "RelativeToolTip": "Tax Calculator\\Form1.Designer.cs",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAqwH8AAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwAQBAADgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-19T22:11:56.28Z",
               "EditorCaption": ""
