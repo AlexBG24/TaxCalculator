@@ -1,0 +1,22 @@
+
+*.dll
+
+*.exe
+
+Tax Calculator/bin/Debug/net8.0-windows/
+
+Tax Calculator/obj/Debug/net8.0-windows/
+
+Tax Calculator/obj/Tax Calculator.csproj.nuget.dgspec.json
+
+*.props
+
+*.targets
+
+.vs/Tax Calculator/v17/.suo
+
+.vs/Tax Calculator/DesignTimeBuild/.dtbcache.v2
+
+*.vsidx
+
+*.json
