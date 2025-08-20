@@ -18,10 +18,10 @@ namespace Tax_Calculator
         #region Data
         String Province = "";
         String Year = "";
-        double GrossIncome = double.NaN;
-        double CPPPaid = double.NaN;
-        double EIPaid = double.NaN;
-        double TaxDeducted = double.NaN;
+        decimal GrossIncome = -1m;
+        decimal CPPPaid = -1m;
+        decimal EIPaid = -1m;
+        decimal TaxDeducted = -1m;
 
         #endregion
         #region Select year and Province
@@ -51,28 +51,28 @@ namespace Tax_Calculator
         {
             if (!string.IsNullOrEmpty(textBoxGrossIncome.Text))
             {
-                this.GrossIncome = double.Parse(textBoxGrossIncome.Text);
+                this.GrossIncome = decimal.Parse(textBoxGrossIncome.Text);
             }
         }
         private void textBoxCPP_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(textBoxCPP.Text))
             {
-                this.CPPPaid = double.Parse(textBoxCPP.Text);
+                this.CPPPaid = decimal.Parse(textBoxCPP.Text);
             }
         }
         private void textBoxEIPaid_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(textBoxEIPaid.Text))
             {
-                this.EIPaid = double.Parse(textBoxEIPaid.Text);
+                this.EIPaid = decimal.Parse(textBoxEIPaid.Text);
             }
         }
         private void textBoxTaxDeducted_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(textBoxTaxDeducted.Text))
             {
-                this.TaxDeducted = double.Parse(textBoxTaxDeducted.Text);
+                this.TaxDeducted = decimal.Parse(textBoxTaxDeducted.Text);
             }
         }
         #endregion

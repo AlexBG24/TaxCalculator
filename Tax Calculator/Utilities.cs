@@ -34,13 +34,13 @@ namespace Tax_Calculator
             }
         }
 
-        public static bool checkRequiredInputs(String Year, String Province, double GrossIncome, double CPPPaid, double EIPaid, double TaxPaid)
+        public static bool checkRequiredInputs(String Year, String Province, decimal GrossIncome, decimal CPPPaid, decimal EIPaid, decimal TaxPaid)
         {
             if (String.IsNullOrEmpty(Province) || String.IsNullOrEmpty(Year))
             {
                 return false;
             }
-            return !(double.IsNaN(GrossIncome) || double.IsNaN(CPPPaid) || double.IsNaN(EIPaid) || double.IsNaN(TaxPaid));
+            return !(GrossIncome < 0 || CPPPaid < 0|| EIPaid < 0 || TaxPaid < 0);
         }
     }
 }

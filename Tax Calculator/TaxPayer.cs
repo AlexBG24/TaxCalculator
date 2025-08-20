@@ -10,24 +10,24 @@ namespace Tax_Calculator
     {
         #region Data
         //Input Data
-        private String Year { get; }
+        private int Year { get; }
         private String Province { get; }
-        private double GrossIncome { get; }
-        private double CPPPaid { get; }
-        private double EIPaid { get; }
-        private double TaxPaid { get; }
+        private decimal GrossIncome { get; }
+        private decimal CPPPaid { get; }
+        private decimal EIPaid { get; }
+        private decimal TaxPaid { get; }
 
         //Output Data
-        public double IncomeTax { get; private set; }
-        public double TaxesOwed
+        public decimal IncomeTax { get; private set; }
+        public decimal TaxesOwed
         {
             get
             {
                 return IncomeTax - TaxPaid;
             }
         }
-        public double MarginalTaxRate { get; private set; }
-        public double EffectiveTaxRate
+        public decimal MarginalTaxRate { get; private set; }
+        public decimal EffectiveTaxRate
         {
             get
             {
@@ -46,9 +46,9 @@ namespace Tax_Calculator
 
         #region Constructor
 
-        public TaxPayer(String Year, String Province, double GrossIncome, double CPPPaid, double EIPaid, double TaxPaid)
+        public TaxPayer(String Year, String Province, decimal GrossIncome, decimal CPPPaid, decimal EIPaid, decimal TaxPaid)
         {
-            this.Year = Year;
+            this.Year = int.Parse(Year);
             this.Province = Province;
             this.GrossIncome = GrossIncome;
             this.CPPPaid = CPPPaid;
@@ -65,11 +65,11 @@ namespace Tax_Calculator
             this.IncomeTax = this.CalcFedTax() + this.CalcProvTax();
         }
 
-        private double CalcFedTax()
+        private decimal CalcFedTax()
         {
-            double fedTax = 0;
+            decimal fedTax = 0;
 
-            if (GrossIncome < TaxRates.Canada[Year].BasicPersonalAmount) { }
+            if (GrossIncome < TaxData.Years[this.Year].Federal.BasicPersonalAmount) { }
             else
             {
                 for (int i = 0; i < TaxRates.Canada[Year].Bracket.Length; i++)
@@ -83,9 +83,9 @@ namespace Tax_Calculator
             return fedTax;
         }
 
-        private double CalcProvTax()
+        private decimal CalcProvTax()
         {
-            double provTax = 0;
+            decimal provTax = 0;
 
             if (GrossIncome < TaxRates.Province[Year].BasicPersonalAmount) { }
             else
