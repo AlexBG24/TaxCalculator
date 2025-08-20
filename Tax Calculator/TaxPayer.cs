@@ -61,45 +61,45 @@ namespace Tax_Calculator
 
         public void CalculateTax()
         {
-
-            this.IncomeTax = this.CalcFedTax() + this.CalcProvTax();
+            this.IncomeTax = this.CalculateFederalTax() + this.CalculateProvincialTax();
         }
 
-        private decimal CalcFedTax()
+        private decimal CalculateFederalTax()
         {
-            decimal fedTax = 0;
+            decimal FederalTax = 0;
 
-            if (GrossIncome < TaxData.Years[this.Year].Federal.BasicPersonalAmount) { }
+            
+
+
+
+            if (FederalTax < 0)
+            {
+                return 0;
+            }
             else
             {
-                for (int i = 0; i < TaxRates.Canada[Year].Bracket.Length; i++)
-                {
-                    if (GrossIncome < TaxRates.Canada[Year].Bracket[i])
-                    {
-                        fedTax += TaxRates.Canada[Year].Rates[i] * (GrossIncome - TaxRates.Canada[Year].Brackets[i]);
-                    }
-                }
+                return FederalTax;
             }
-            return fedTax;
         }
 
-        private decimal CalcProvTax()
+        private decimal CalculateProvincialTax()
         {
-            decimal provTax = 0;
+            decimal ProvincialTax = 0;
 
-            if (GrossIncome < TaxRates.Province[Year].BasicPersonalAmount) { }
-            else
-            {
-                for (int i = 0; i < 10; i++)
-                {
-                    if (GrossIncome < TaxRates.Province[Year].Bracket[i])
-                    {
-                        provTax += TaxRates.Province[Year].Rates[i] * (GrossIncome - TaxRates.Province[Year].Brackets[i]);
-                    }
-                }
-            }
-            return provTax;
+            return ProvincialTax;
         }
+
+        private static decimal CalculateCumulativeTax(JurisdictionRates Rates, int bracket) //Calculates taxes owed up to a certain bracket
+        {
+            decimal Taxes = 0;
+            for (int i = 0; i < bracket; i++)
+            {
+                Taxes += Rates.Brackets[i].Rate * (Rates.Brackets[i + 1].Threshold - Rates.Brackets[i].Threshold);
+            }
+
+            return Taxes;
+        }
+
 
         #endregion
     }
