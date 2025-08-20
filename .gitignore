@@ -20,3 +20,17 @@ Tax Calculator/obj/Tax Calculator.csproj.nuget.dgspec.json
 *.vsidx
 
 *.json
+
+*.p7s
+
+*.png
+
+packages/MSTest.TestAdapter.2.2.10/MSTest.TestAdapter.2.2.10.nupkg
+
+*.xml
+
+packages/MSTest.TestFramework.2.2.10/MSTest.TestFramework.2.2.10.nupkg
+
+TaxCalculatorUnitTests/obj/Debug/.NETFramework,Version=v4.7.2.AssemblyAttributes.cs
+
+*.cache

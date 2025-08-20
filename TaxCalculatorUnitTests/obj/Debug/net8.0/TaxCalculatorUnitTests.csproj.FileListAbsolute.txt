@@ -1,0 +1,6 @@
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\TaxCalculatorUnitTests\obj\Debug\net8.0\TaxCalculatorUnitTests.csproj.AssemblyReference.cache
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\TaxCalculatorUnitTests\obj\Debug\net8.0\TaxCalculatorUnitTests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\TaxCalculatorUnitTests\obj\Debug\net8.0\TaxCalculatorUnitTests.AssemblyInfoInputs.cache
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\TaxCalculatorUnitTests\obj\Debug\net8.0\TaxCalculatorUnitTests.AssemblyInfo.cs
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\TaxCalculatorUnitTests\obj\Debug\net8.0\TaxCalculatorUnitTests.csproj.CoreCompileInputs.cache
+C:\Users\alexb\Documents\Code Projects\TaxCalculator\TaxCalculatorUnitTests\obj\Debug\net8.0\TaxCalculatorUnitTests.sourcelink.json
