@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tax_Calculator
 {
-    internal class JurisdictionRates
+    public class JurisdictionRates
     {
         public decimal BasicPersonalAmount { get; set; }
         public List<TaxBracket> Brackets { get; set; } = new();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tax_Calculator
 {
-    internal class TaxYear
+    public class TaxYear
     {
         public int Year { get; set; }
 
