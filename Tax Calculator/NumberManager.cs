@@ -5,9 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Tax_Calculator
-{   
-    //Class to store general utility methods
-    internal class Utilities
+{
+    internal class NumberManager
     {
         public static void ControlMoneyInputs(object sender, KeyPressEventArgs e)
         {
@@ -32,15 +31,21 @@ namespace Tax_Calculator
                     e.Handled = true;
                 }
             }
+
+            //decimal.TryParse(textbox.Text, out decimal value);
+
+            //textbox.Text = value.ToString("#,###.00");
+
         }
 
-        public static bool checkRequiredInputs(String Year, String Province, decimal GrossIncome, decimal CPPPaid, decimal EIPaid, decimal TaxPaid)
+        public static string OutputAsDollarValue(decimal Number)
         {
-            if (String.IsNullOrEmpty(Province) || String.IsNullOrEmpty(Year))
-            {
-                return false;
-            }
-            return !(GrossIncome < 0 || CPPPaid < 0|| EIPaid < 0 || TaxPaid < 0);
+            return Math.Round(Number, 2, MidpointRounding.ToPositiveInfinity).ToString("#,##0.00"); 
+        }
+
+        public static string OutputAsPercentage(decimal Number)
+        {
+            return Math.Round(100 * Number, 2, MidpointRounding.ToPositiveInfinity).ToString("0.00");
         }
     }
 }

@@ -34,3 +34,11 @@ packages/MSTest.TestFramework.2.2.10/MSTest.TestFramework.2.2.10.nupkg
 TaxCalculatorUnitTests/obj/Debug/.NETFramework,Version=v4.7.2.AssemblyAttributes.cs
 
 *.cache
+
+*.bin
+
+TaxCalculatorUnitTests/obj/Debug/net8.0-windows/
+
+.vs/Tax Calculator/v17/
+
+TaxCalculatorUnitTests/bin/Debug/net8.0-windows/
