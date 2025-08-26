@@ -1,4 +1,5 @@
 using System.CodeDom;
+using System.Runtime.CompilerServices;
 
 namespace Tax_Calculator
 {
@@ -31,6 +32,8 @@ namespace Tax_Calculator
             {
                 this.Year = ComboBoxSelectTaxYear.SelectedItem.ToString();
             }
+
+            displayTaxBracketsinDataGridView();
         }
         private void ComboBoxSelectProvince_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -38,6 +41,8 @@ namespace Tax_Calculator
             {
                 this.Province = ComboBoxSelectProvince.SelectedItem.ToString();
             }
+
+            displayTaxBracketsinDataGridView();
         }
         #endregion
 
@@ -101,6 +106,32 @@ namespace Tax_Calculator
                 WarningForm warningForm = new WarningForm();
                 warningForm.ShowDialog();
             }
+        }
+
+        private void displayTaxBracketsinDataGridView()
+        {
+            if (ComboBoxSelectTaxYear.SelectedItem == null || ComboBoxSelectProvince.SelectedItem == null)
+            {
+                return;
+            }
+            else
+            {
+                Font HeaderBold = new Font(dataGridViewFederalTaxRates.Font, FontStyle.Bold);
+
+                dataGridViewFederalTaxRates.DataSource = TaxData.Years[int.Parse(Year)].Federal.Brackets;
+                dataGridViewFederalTaxRates.Columns["Threshold"].DefaultCellStyle.Format = "C2";
+                dataGridViewFederalTaxRates.Columns["Rate"].DefaultCellStyle.Format = "P2";
+
+                dataGridViewProvincialTaxRates.DataSource = TaxData.Years[int.Parse(Year)].Provincial[Province].Brackets;
+                dataGridViewProvincialTaxRates.Columns["Threshold"].DefaultCellStyle.Format = "C2";
+                dataGridViewProvincialTaxRates.Columns["Rate"].DefaultCellStyle.Format = "P2";
+
+            }
+        }
+
+        private void InputBox_Leave(object sender, EventArgs e)
+        {
+            NumberManager.ReformatAfterLeaving((TextBox)sender);
         }
     }
 }

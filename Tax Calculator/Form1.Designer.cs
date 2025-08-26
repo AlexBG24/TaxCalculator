@@ -32,6 +32,8 @@
             Label labelTaxDeducted;
             Label labelEIPaid;
             Label labelCPPPaid;
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             textboxTaxDeducted = new TextBox();
             textboxEIPremiums = new TextBox();
             textboxGrossIncome = new TextBox();
@@ -54,6 +56,9 @@
             dataGridViewProvincialTaxRates = new DataGridView();
             TaxRatesGroupBox = new GroupBox();
             OutputGroupBox = new GroupBox();
+            labelProvincialMarginalTaxRatePercentSign = new Label();
+            labelProvincialMarginalTaxRate = new Label();
+            textBoxProvincialMarginalTaxRate = new TextBox();
             labelEffectiveTaxRatePercentSign = new Label();
             labelFederalMarginalTaxRatePercentSign = new Label();
             labelTotalIncomeTax = new Label();
@@ -70,9 +75,6 @@
             textboxTaxOwing = new TextBox();
             textboxFederalMarginalTaxRate = new TextBox();
             labelTaxOwingDollarSign = new Label();
-            labelProvincialMarginalTaxRatePercentSign = new Label();
-            labelProvincialMarginalTaxRate = new Label();
-            textBoxProvincialMarginalTaxRate = new TextBox();
             IncomeInformationBox = new GroupBox();
             labelTaxDeducted = new Label();
             labelEIPaid = new Label();
@@ -114,6 +116,7 @@
             textboxTaxDeducted.TabIndex = 4;
             textboxTaxDeducted.TextChanged += textBoxTaxDeducted_TextChanged;
             textboxTaxDeducted.KeyPress += MoneyInput_KeyPress;
+            textboxTaxDeducted.Leave += InputBox_Leave;
             // 
             // textboxEIPremiums
             // 
@@ -123,6 +126,7 @@
             textboxEIPremiums.TabIndex = 3;
             textboxEIPremiums.TextChanged += textBoxEIPaid_TextChanged;
             textboxEIPremiums.KeyPress += MoneyInput_KeyPress;
+            textboxEIPremiums.Leave += InputBox_Leave;
             // 
             // textboxGrossIncome
             // 
@@ -132,6 +136,7 @@
             textboxGrossIncome.TabIndex = 1;
             textboxGrossIncome.TextChanged += textBoxGrossIncome_TextChanged;
             textboxGrossIncome.KeyPress += MoneyInput_KeyPress;
+            textboxGrossIncome.Leave += InputBox_Leave;
             // 
             // textboxCPP
             // 
@@ -141,6 +146,7 @@
             textboxCPP.TabIndex = 2;
             textboxCPP.TextChanged += textBoxCPP_TextChanged;
             textboxCPP.KeyPress += MoneyInput_KeyPress;
+            textboxCPP.Leave += InputBox_Leave;
             // 
             // labelTaxDeductedDollarSign
             // 
@@ -216,16 +222,16 @@
             // 
             // textboxFederalTax
             // 
-            textboxFederalTax.Location = new Point(120, 18);
+            textboxFederalTax.Location = new Point(162, 16);
             textboxFederalTax.Name = "textboxFederalTax";
             textboxFederalTax.ReadOnly = true;
             textboxFederalTax.Size = new Size(100, 23);
-            textboxFederalTax.TabIndex = 4;
+            textboxFederalTax.TabIndex = 6;
             // 
             // labelFederalTaxDollarSign
             // 
             labelFederalTaxDollarSign.AutoSize = true;
-            labelFederalTaxDollarSign.Location = new Point(102, 21);
+            labelFederalTaxDollarSign.Location = new Point(144, 21);
             labelFederalTaxDollarSign.Name = "labelFederalTaxDollarSign";
             labelFederalTaxDollarSign.Size = new Size(13, 15);
             labelFederalTaxDollarSign.TabIndex = 6;
@@ -289,7 +295,7 @@
             // 
             // buttonCalculate
             // 
-            buttonCalculate.Location = new Point(178, 372);
+            buttonCalculate.Location = new Point(178, 379);
             buttonCalculate.Name = "buttonCalculate";
             buttonCalculate.Size = new Size(100, 23);
             buttonCalculate.TabIndex = 5;
@@ -302,33 +308,65 @@
             InputBox.Controls.Add(buttonCalculate);
             InputBox.Location = new Point(13, 3);
             InputBox.Name = "InputBox";
-            InputBox.Size = new Size(469, 415);
+            InputBox.Size = new Size(406, 415);
             InputBox.TabIndex = 9;
             InputBox.TabStop = false;
             // 
             // dataGridViewFederalTaxRates
             // 
+            dataGridViewFederalTaxRates.AllowUserToAddRows = false;
+            dataGridViewFederalTaxRates.AllowUserToDeleteRows = false;
+            dataGridViewFederalTaxRates.AllowUserToResizeColumns = false;
+            dataGridViewFederalTaxRates.AllowUserToResizeRows = false;
+            dataGridViewFederalTaxRates.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewFederalTaxRates.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewFederalTaxRates.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewFederalTaxRates.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewFederalTaxRates.Location = new Point(18, 22);
             dataGridViewFederalTaxRates.Name = "dataGridViewFederalTaxRates";
-            dataGridViewFederalTaxRates.Size = new Size(193, 178);
-            dataGridViewFederalTaxRates.TabIndex = 10;
+            dataGridViewFederalTaxRates.ReadOnly = true;
+            dataGridViewFederalTaxRates.RowHeadersVisible = false;
+            dataGridViewFederalTaxRates.Size = new Size(277, 172);
+            dataGridViewFederalTaxRates.TabIndex = 9;
             // 
             // dataGridViewProvincialTaxRates
             // 
+            dataGridViewProvincialTaxRates.AllowUserToAddRows = false;
+            dataGridViewProvincialTaxRates.AllowUserToDeleteRows = false;
+            dataGridViewProvincialTaxRates.AllowUserToResizeColumns = false;
+            dataGridViewProvincialTaxRates.AllowUserToResizeRows = false;
+            dataGridViewProvincialTaxRates.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewProvincialTaxRates.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridViewProvincialTaxRates.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewProvincialTaxRates.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewProvincialTaxRates.Location = new Point(308, 22);
+            dataGridViewProvincialTaxRates.Location = new Point(321, 22);
             dataGridViewProvincialTaxRates.Name = "dataGridViewProvincialTaxRates";
-            dataGridViewProvincialTaxRates.Size = new Size(193, 178);
+            dataGridViewProvincialTaxRates.ReadOnly = true;
+            dataGridViewProvincialTaxRates.RowHeadersVisible = false;
+            dataGridViewProvincialTaxRates.Size = new Size(277, 172);
             dataGridViewProvincialTaxRates.TabIndex = 10;
             // 
             // TaxRatesGroupBox
             // 
             TaxRatesGroupBox.Controls.Add(dataGridViewProvincialTaxRates);
             TaxRatesGroupBox.Controls.Add(dataGridViewFederalTaxRates);
-            TaxRatesGroupBox.Location = new Point(519, 3);
+            TaxRatesGroupBox.Location = new Point(449, 3);
             TaxRatesGroupBox.Name = "TaxRatesGroupBox";
-            TaxRatesGroupBox.Size = new Size(522, 210);
+            TaxRatesGroupBox.Size = new Size(611, 210);
             TaxRatesGroupBox.TabIndex = 11;
             TaxRatesGroupBox.TabStop = false;
             // 
@@ -355,16 +393,42 @@
             OutputGroupBox.Controls.Add(labelTaxOwingDollarSign);
             OutputGroupBox.Controls.Add(textboxFederalTax);
             OutputGroupBox.Controls.Add(labelFederalTaxDollarSign);
-            OutputGroupBox.Location = new Point(519, 236);
+            OutputGroupBox.Location = new Point(449, 236);
             OutputGroupBox.Name = "OutputGroupBox";
-            OutputGroupBox.Size = new Size(522, 182);
+            OutputGroupBox.Size = new Size(611, 182);
             OutputGroupBox.TabIndex = 12;
             OutputGroupBox.TabStop = false;
+            // 
+            // labelProvincialMarginalTaxRatePercentSign
+            // 
+            labelProvincialMarginalTaxRatePercentSign.AutoSize = true;
+            labelProvincialMarginalTaxRatePercentSign.Location = new Point(492, 61);
+            labelProvincialMarginalTaxRatePercentSign.Name = "labelProvincialMarginalTaxRatePercentSign";
+            labelProvincialMarginalTaxRatePercentSign.Size = new Size(17, 15);
+            labelProvincialMarginalTaxRatePercentSign.TabIndex = 18;
+            labelProvincialMarginalTaxRatePercentSign.Text = "%";
+            // 
+            // labelProvincialMarginalTaxRate
+            // 
+            labelProvincialMarginalTaxRate.AutoSize = true;
+            labelProvincialMarginalTaxRate.Location = new Point(321, 61);
+            labelProvincialMarginalTaxRate.Name = "labelProvincialMarginalTaxRate";
+            labelProvincialMarginalTaxRate.Size = new Size(155, 15);
+            labelProvincialMarginalTaxRate.TabIndex = 17;
+            labelProvincialMarginalTaxRate.Text = "Provincial Marginal Tax Rate";
+            // 
+            // textBoxProvincialMarginalTaxRate
+            // 
+            textBoxProvincialMarginalTaxRate.Location = new Point(511, 56);
+            textBoxProvincialMarginalTaxRate.Name = "textBoxProvincialMarginalTaxRate";
+            textBoxProvincialMarginalTaxRate.ReadOnly = true;
+            textBoxProvincialMarginalTaxRate.Size = new Size(74, 23);
+            textBoxProvincialMarginalTaxRate.TabIndex = 11;
             // 
             // labelEffectiveTaxRatePercentSign
             // 
             labelEffectiveTaxRatePercentSign.AutoSize = true;
-            labelEffectiveTaxRatePercentSign.Location = new Point(408, 109);
+            labelEffectiveTaxRatePercentSign.Location = new Point(492, 111);
             labelEffectiveTaxRatePercentSign.Name = "labelEffectiveTaxRatePercentSign";
             labelEffectiveTaxRatePercentSign.Size = new Size(17, 15);
             labelEffectiveTaxRatePercentSign.TabIndex = 15;
@@ -373,7 +437,7 @@
             // labelFederalMarginalTaxRatePercentSign
             // 
             labelFederalMarginalTaxRatePercentSign.AutoSize = true;
-            labelFederalMarginalTaxRatePercentSign.Location = new Point(408, 21);
+            labelFederalMarginalTaxRatePercentSign.Location = new Point(492, 21);
             labelFederalMarginalTaxRatePercentSign.Name = "labelFederalMarginalTaxRatePercentSign";
             labelFederalMarginalTaxRatePercentSign.Size = new Size(17, 15);
             labelFederalMarginalTaxRatePercentSign.TabIndex = 14;
@@ -382,7 +446,7 @@
             // labelTotalIncomeTax
             // 
             labelTotalIncomeTax.AutoSize = true;
-            labelTotalIncomeTax.Location = new Point(6, 109);
+            labelTotalIncomeTax.Location = new Point(18, 111);
             labelTotalIncomeTax.Name = "labelTotalIncomeTax";
             labelTotalIncomeTax.Size = new Size(96, 15);
             labelTotalIncomeTax.TabIndex = 13;
@@ -390,16 +454,16 @@
             // 
             // textboxTotalIncomeTax
             // 
-            textboxTotalIncomeTax.Location = new Point(120, 106);
+            textboxTotalIncomeTax.Location = new Point(162, 106);
             textboxTotalIncomeTax.Name = "textboxTotalIncomeTax";
             textboxTotalIncomeTax.ReadOnly = true;
             textboxTotalIncomeTax.Size = new Size(100, 23);
-            textboxTotalIncomeTax.TabIndex = 11;
+            textboxTotalIncomeTax.TabIndex = 8;
             // 
             // labelTotalIncomeTaxDollarSign
             // 
             labelTotalIncomeTaxDollarSign.AutoSize = true;
-            labelTotalIncomeTaxDollarSign.Location = new Point(101, 109);
+            labelTotalIncomeTaxDollarSign.Location = new Point(144, 111);
             labelTotalIncomeTaxDollarSign.Name = "labelTotalIncomeTaxDollarSign";
             labelTotalIncomeTaxDollarSign.Size = new Size(13, 15);
             labelTotalIncomeTaxDollarSign.TabIndex = 12;
@@ -408,7 +472,7 @@
             // labelProvincialTax
             // 
             labelProvincialTax.AutoSize = true;
-            labelProvincialTax.Location = new Point(16, 61);
+            labelProvincialTax.Location = new Point(18, 61);
             labelProvincialTax.Name = "labelProvincialTax";
             labelProvincialTax.Size = new Size(79, 15);
             labelProvincialTax.TabIndex = 10;
@@ -416,16 +480,16 @@
             // 
             // textboxProvincialTax
             // 
-            textboxProvincialTax.Location = new Point(120, 58);
+            textboxProvincialTax.Location = new Point(162, 56);
             textboxProvincialTax.Name = "textboxProvincialTax";
             textboxProvincialTax.ReadOnly = true;
             textboxProvincialTax.Size = new Size(100, 23);
-            textboxProvincialTax.TabIndex = 8;
+            textboxProvincialTax.TabIndex = 7;
             // 
             // labelProvincialTaxDollarSign
             // 
             labelProvincialTaxDollarSign.AutoSize = true;
-            labelProvincialTaxDollarSign.Location = new Point(101, 61);
+            labelProvincialTaxDollarSign.Location = new Point(144, 61);
             labelProvincialTaxDollarSign.Name = "labelProvincialTaxDollarSign";
             labelProvincialTaxDollarSign.Size = new Size(13, 15);
             labelProvincialTaxDollarSign.TabIndex = 9;
@@ -434,7 +498,7 @@
             // labelEffectiveTaxRate
             // 
             labelEffectiveTaxRate.AutoSize = true;
-            labelEffectiveTaxRate.Location = new Point(310, 109);
+            labelEffectiveTaxRate.Location = new Point(321, 111);
             labelEffectiveTaxRate.Name = "labelEffectiveTaxRate";
             labelEffectiveTaxRate.Size = new Size(98, 15);
             labelEffectiveTaxRate.TabIndex = 7;
@@ -443,7 +507,7 @@
             // labelTaxOwing
             // 
             labelTaxOwing.AutoSize = true;
-            labelTaxOwing.Location = new Point(18, 144);
+            labelTaxOwing.Location = new Point(18, 151);
             labelTaxOwing.Name = "labelTaxOwing";
             labelTaxOwing.Size = new Size(62, 15);
             labelTaxOwing.TabIndex = 7;
@@ -452,7 +516,7 @@
             // labelFederalMarginalTaxRate
             // 
             labelFederalMarginalTaxRate.AutoSize = true;
-            labelFederalMarginalTaxRate.Location = new Point(261, 21);
+            labelFederalMarginalTaxRate.Location = new Point(321, 21);
             labelFederalMarginalTaxRate.Name = "labelFederalMarginalTaxRate";
             labelFederalMarginalTaxRate.Size = new Size(141, 15);
             labelFederalMarginalTaxRate.TabIndex = 7;
@@ -469,68 +533,42 @@
             // 
             // textboxEffectiveTaxRate
             // 
-            textboxEffectiveTaxRate.Location = new Point(427, 106);
+            textboxEffectiveTaxRate.Location = new Point(511, 106);
             textboxEffectiveTaxRate.Name = "textboxEffectiveTaxRate";
             textboxEffectiveTaxRate.ReadOnly = true;
             textboxEffectiveTaxRate.Size = new Size(74, 23);
-            textboxEffectiveTaxRate.TabIndex = 4;
+            textboxEffectiveTaxRate.TabIndex = 12;
             // 
             // textboxTaxOwing
             // 
-            textboxTaxOwing.Location = new Point(120, 140);
+            textboxTaxOwing.Location = new Point(162, 146);
             textboxTaxOwing.Name = "textboxTaxOwing";
             textboxTaxOwing.ReadOnly = true;
             textboxTaxOwing.Size = new Size(100, 23);
-            textboxTaxOwing.TabIndex = 4;
+            textboxTaxOwing.TabIndex = 9;
             // 
             // textboxFederalMarginalTaxRate
             // 
-            textboxFederalMarginalTaxRate.Location = new Point(427, 18);
+            textboxFederalMarginalTaxRate.Location = new Point(511, 16);
             textboxFederalMarginalTaxRate.Name = "textboxFederalMarginalTaxRate";
             textboxFederalMarginalTaxRate.ReadOnly = true;
             textboxFederalMarginalTaxRate.Size = new Size(74, 23);
-            textboxFederalMarginalTaxRate.TabIndex = 4;
+            textboxFederalMarginalTaxRate.TabIndex = 10;
             // 
             // labelTaxOwingDollarSign
             // 
             labelTaxOwingDollarSign.AutoSize = true;
-            labelTaxOwingDollarSign.Location = new Point(101, 143);
+            labelTaxOwingDollarSign.Location = new Point(144, 151);
             labelTaxOwingDollarSign.Name = "labelTaxOwingDollarSign";
             labelTaxOwingDollarSign.Size = new Size(13, 15);
             labelTaxOwingDollarSign.TabIndex = 6;
             labelTaxOwingDollarSign.Text = "$";
             // 
-            // labelProvincialMarginalTaxRatePercentSign
-            // 
-            labelProvincialMarginalTaxRatePercentSign.AutoSize = true;
-            labelProvincialMarginalTaxRatePercentSign.Location = new Point(408, 50);
-            labelProvincialMarginalTaxRatePercentSign.Name = "labelProvincialMarginalTaxRatePercentSign";
-            labelProvincialMarginalTaxRatePercentSign.Size = new Size(17, 15);
-            labelProvincialMarginalTaxRatePercentSign.TabIndex = 18;
-            labelProvincialMarginalTaxRatePercentSign.Text = "%";
-            // 
-            // labelProvincialMarginalTaxRate
-            // 
-            labelProvincialMarginalTaxRate.AutoSize = true;
-            labelProvincialMarginalTaxRate.Location = new Point(247, 50);
-            labelProvincialMarginalTaxRate.Name = "labelProvincialMarginalTaxRate";
-            labelProvincialMarginalTaxRate.Size = new Size(155, 15);
-            labelProvincialMarginalTaxRate.TabIndex = 17;
-            labelProvincialMarginalTaxRate.Text = "Provincial Marginal Tax Rate";
-            // 
-            // textBoxProvincialMarginalTaxRate
-            // 
-            textBoxProvincialMarginalTaxRate.Location = new Point(427, 47);
-            textBoxProvincialMarginalTaxRate.Name = "textBoxProvincialMarginalTaxRate";
-            textBoxProvincialMarginalTaxRate.ReadOnly = true;
-            textBoxProvincialMarginalTaxRate.Size = new Size(74, 23);
-            textBoxProvincialMarginalTaxRate.TabIndex = 16;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1074, 451);
+            ClientSize = new Size(1082, 451);
             Controls.Add(OutputGroupBox);
             Controls.Add(TaxRatesGroupBox);
             Controls.Add(IncomeInformationBox);
