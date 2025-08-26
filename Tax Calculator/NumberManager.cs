@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tax_Calculator
 {
-    internal class NumberManager
+    public class NumberManager
     {
         public static void ControlMoneyInputs(object sender, KeyPressEventArgs e)
         {
@@ -17,7 +17,7 @@ namespace Tax_Calculator
             {
                 e.Handled = true;
             }
-            if (e.KeyChar == '.' && textbox.Text.Contains("."))
+            if (e.KeyChar == '.' && (textbox.Text.Contains(".") || textbox.Text.Equals("")))
             {
                 e.Handled = true;
             }
@@ -31,21 +31,30 @@ namespace Tax_Calculator
                     e.Handled = true;
                 }
             }
+        }
 
-            //decimal.TryParse(textbox.Text, out decimal value);
+        public static void ReformatAfterLeaving(TextBox textbox)
+        {
+            decimal.TryParse(textbox.Text, out decimal value);
 
-            //textbox.Text = value.ToString("#,###.00");
-
+            if (value == 0)
+            {
+                textbox.Text = "0.00";
+            }
+            else
+            {
+                textbox.Text = value.ToString("#,###.00");
+            }
         }
 
         public static string OutputAsDollarValue(decimal Number)
         {
-            return Math.Round(Number, 2, MidpointRounding.ToPositiveInfinity).ToString("#,##0.00"); 
+            return Math.Round(Number, 2, MidpointRounding.AwayFromZero).ToString("#,##0.00"); 
         }
 
         public static string OutputAsPercentage(decimal Number)
         {
-            return Math.Round(100 * Number, 2, MidpointRounding.ToPositiveInfinity).ToString("0.00");
+            return Math.Round(100 * Number, 2, MidpointRounding.AwayFromZero).ToString("0.00");
         }
     }
 }
