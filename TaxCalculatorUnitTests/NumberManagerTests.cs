@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Tax_Calculator.Tests
 {   
     [TestClass]
-    public sealed class TestNumberManager
+    public sealed class NumberManagerTests
     {
     }
 }

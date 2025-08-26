@@ -11,12 +11,6 @@ namespace Tax_Calculator.Tests
     [TestClass]
     public sealed class TaxDataTests
     {
-        //Utility Class
-        public static void DoubleToDecimal(ref decimal value)
-        {
-            value = (decimal)value;
-        }
-
         [DataRow(0, 0)]
         [DataRow(100, 0.5)]
         [DataRow(2000, 5000)]

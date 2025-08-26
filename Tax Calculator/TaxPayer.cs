@@ -113,7 +113,7 @@ namespace Tax_Calculator
             return Tax;
         }
 
-        private static decimal CalculateCumulativeTax(List<TaxBracket> Brackets, decimal GrossIncome) //Calculates taxes owed up to a certain bracket
+        public static decimal CalculateCumulativeTax(List<TaxBracket> Brackets, decimal GrossIncome) //Calculates taxes owed up to a certain bracket
         {
             int MarginalTaxBracket = GetMarginalTaxBracket(GrossIncome, Brackets);
 
@@ -126,17 +126,17 @@ namespace Tax_Calculator
             return Taxes;
         }
 
-        private static decimal CalculateMarginalTax(List<TaxBracket> Brackets, decimal GrossIncome)
+        public static decimal CalculateMarginalTax(List<TaxBracket> Brackets, decimal GrossIncome)
         {
             int MarginalTaxBracket = GetMarginalTaxBracket(GrossIncome, Brackets);
             return Brackets[MarginalTaxBracket].Rate * (GrossIncome - Brackets[MarginalTaxBracket].Threshold);
         }
 
-        private static int GetMarginalTaxBracket(decimal GrossIncome, List<TaxBracket> Brackets)
+        public static int GetMarginalTaxBracket(decimal GrossIncome, List<TaxBracket> Brackets)
         {
             int i = 0;
 
-            if (GrossIncome >= Brackets[Brackets.Count - 1].Threshold)
+            if (GrossIncome > Brackets[Brackets.Count - 1].Threshold)
             {
                 return Brackets.Count - 1;
             }
@@ -151,7 +151,7 @@ namespace Tax_Calculator
             }
         }
 
-        private static decimal CalculateTaxCredits(decimal TaxCreditRate, params decimal[] Credits)
+        public static decimal CalculateTaxCredits(decimal TaxCreditRate, params decimal[] Credits)
         {
             decimal TotalCredits = 0;
             for (int i = 0; i < Credits.Length; i++)
