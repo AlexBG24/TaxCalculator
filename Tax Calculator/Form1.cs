@@ -44,53 +44,56 @@ namespace Tax_Calculator
         #region Gross Income Input Box
         private void MoneyInput_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Utilities.ControlMoneyInputs(sender, e);
+            NumberManager.ControlMoneyInputs(sender, e);
         }
 
         private void textBoxGrossIncome_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBoxGrossIncome.Text))
+            if (!string.IsNullOrEmpty(textboxGrossIncome.Text))
             {
-                this.GrossIncome = decimal.Parse(textBoxGrossIncome.Text);
+                this.GrossIncome = decimal.Parse(textboxGrossIncome.Text);
             }
         }
         private void textBoxCPP_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBoxCPP.Text))
+            if (!string.IsNullOrEmpty(textboxCPP.Text))
             {
-                this.CPPPaid = decimal.Parse(textBoxCPP.Text);
+                this.CPPPaid = decimal.Parse(textboxCPP.Text);
             }
         }
         private void textBoxEIPaid_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBoxEIPaid.Text))
+            if (!string.IsNullOrEmpty(textboxEIPremiums.Text))
             {
-                this.EIPaid = decimal.Parse(textBoxEIPaid.Text);
+                this.EIPaid = decimal.Parse(textboxEIPremiums.Text);
             }
         }
         private void textBoxTaxDeducted_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBoxTaxDeducted.Text))
+            if (!string.IsNullOrEmpty(textboxTaxDeducted.Text))
             {
-                this.TaxDeducted = decimal.Parse(textBoxTaxDeducted.Text);
+                this.TaxDeducted = decimal.Parse(textboxTaxDeducted.Text);
             }
         }
         #endregion
 
         private void buttonCalculate_Click(object sender, EventArgs e)
         {
-            TaxPayer tp;
+            TaxPayer taxPayer;
 
-            if (Utilities.checkRequiredInputs(Year, Province, GrossIncome, CPPPaid, EIPaid, TaxDeducted))
+            if (!(String.IsNullOrEmpty(Province) || String.IsNullOrEmpty(Year) || textboxGrossIncome.Text == "" || textboxCPP.Text == "" || textboxEIPremiums.Text == "" || textboxTaxDeducted.Text == ""))
             {
-                tp = new TaxPayer(Year, Province, GrossIncome, CPPPaid, EIPaid, TaxDeducted);
+                taxPayer = new TaxPayer(Year, Province, GrossIncome, CPPPaid, EIPaid, TaxDeducted);
 
-                tp.CalculateTax();
+                taxPayer.CalculateTax();
 
-                textboxIncomeTax.Text = tp.IncomeTax.ToString();
-                textboxTaxOwed.Text = tp.TaxesOwed.ToString();
-                textboxMarginalTaxRate.Text = tp.MarginalTaxRate.ToString();
-                textBoxEffectiveTaxRate.Text = tp.EffectiveTaxRate.ToString();
+                textboxFederalTax.Text = NumberManager.OutputAsDollarValue(taxPayer.FederalIncomeTax);
+                textboxProvincialTax.Text = NumberManager.OutputAsDollarValue(taxPayer.ProvincialIncomeTax);
+                textboxTotalIncomeTax.Text = NumberManager.OutputAsDollarValue(taxPayer.TotalIncomeTax);
+                textboxTaxOwing.Text = NumberManager.OutputAsDollarValue(taxPayer.TaxesOwed);
+                textboxFederalMarginalTaxRate.Text = NumberManager.OutputAsPercentage(taxPayer.FederalMarginalTaxRate);
+                textBoxProvincialMarginalTaxRate.Text = NumberManager.OutputAsPercentage(taxPayer.ProvincialMarginalTaxRate);
+                textboxEffectiveTaxRate.Text = NumberManager.OutputAsPercentage(taxPayer.EffectiveTaxRate);
 
             }
             else
@@ -98,11 +101,6 @@ namespace Tax_Calculator
                 WarningForm warningForm = new WarningForm();
                 warningForm.ShowDialog();
             }
-
-            
-
-
         }
-
     }
 }
