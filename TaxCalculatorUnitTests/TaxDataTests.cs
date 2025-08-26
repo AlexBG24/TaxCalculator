@@ -14,6 +14,7 @@ namespace Tax_Calculator.Tests
         [DataRow(0, 0)]
         [DataRow(100, 0.5)]
         [DataRow(2000, 5000)]
+        [DataRow(20000, 0)]
         [TestMethod]
         public void TaxBracket(double t, double r)
         {
@@ -26,6 +27,7 @@ namespace Tax_Calculator.Tests
 
         [DataRow(0, 0, 0, 0, 0)]
         [DataRow(100, 500, 0.2, 1000, 0.5)]
+        [DataRow(10000, 0, 0.2, 1000, 0.5)]
         [TestMethod]
         public void Jurisdiction(double bpa, double t1, double r1, double t2, double r2)
         {
@@ -51,6 +53,7 @@ namespace Tax_Calculator.Tests
 
         [DataRow(0, 0, 0, 0, 0, 0)]
         [DataRow(5000, 100, 500, 0.2, 1000, 0.5)]
+        [DataRow(100000, 100, 500, 0.2, 1000, 0.5)]
         [TestMethod]
         public void TaxYear(int Year, double bpa, double ft, double fr, double pt, double pr)
         {
