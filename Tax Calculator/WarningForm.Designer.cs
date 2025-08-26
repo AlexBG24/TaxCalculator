@@ -35,17 +35,17 @@
             // labelWarningText
             // 
             labelWarningText.AutoSize = true;
-            labelWarningText.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelWarningText.Location = new Point(45, 38);
+            labelWarningText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelWarningText.Location = new Point(37, 31);
             labelWarningText.Name = "labelWarningText";
-            labelWarningText.Size = new Size(193, 25);
+            labelWarningText.Size = new Size(141, 17);
             labelWarningText.TabIndex = 0;
             labelWarningText.Text = "Please fill in all fields";
             labelWarningText.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // buttonOkay
             // 
-            buttonOkay.Location = new Point(94, 79);
+            buttonOkay.Location = new Point(72, 72);
             buttonOkay.Name = "buttonOkay";
             buttonOkay.Size = new Size(75, 23);
             buttonOkay.TabIndex = 1;
@@ -57,11 +57,16 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(284, 134);
+            ClientSize = new Size(219, 133);
             Controls.Add(buttonOkay);
             Controls.Add(labelWarningText);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "WarningForm";
-            Text = "WarningForm";
+            ShowIcon = false;
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Warning";
             Load += WarningForm_Load;
             ResumeLayout(false);
             PerformLayout();
