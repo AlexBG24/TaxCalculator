@@ -8,7 +8,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Tax_Calculator
 {
-    internal class TaxPayer
+    public class TaxPayer
     {
         #region Data
         //Input Data
@@ -23,19 +23,33 @@ namespace Tax_Calculator
         private JurisdictionRates Provincial { get; }
 
         //Output Data
-        public decimal IncomeTax { get; private set; }
+        public decimal FederalIncomeTax { get; private set; }
+        public decimal ProvincialIncomeTax { get; private set; }
+        public decimal TotalIncomeTax 
+        { get
+            {
+                return FederalIncomeTax + ProvincialIncomeTax;
+            } 
+        }
         public decimal TaxesOwed
         {
             get
             {
-                return IncomeTax - TaxPaid;
+                return TotalIncomeTax - TaxPaid;
             }
         }
-        public decimal MarginalTaxRate
+        public decimal FederalMarginalTaxRate
         {
             get
             {
                 return Federal.Brackets[GetMarginalTaxBracket(this.GrossIncome, this.Federal.Brackets)].Rate;
+            }
+        }
+        public decimal ProvincialMarginalTaxRate
+        {
+            get
+            {
+                return Provincial.Brackets[GetMarginalTaxBracket(this.GrossIncome, this.Provincial.Brackets)].Rate;
             }
         }
         public decimal EffectiveTaxRate
@@ -44,7 +58,7 @@ namespace Tax_Calculator
             {
                 try
                 {
-                    return IncomeTax / GrossIncome;
+                    return TotalIncomeTax / GrossIncome;
                 }
                 catch (DivideByZeroException)
                 {
@@ -78,13 +92,15 @@ namespace Tax_Calculator
             decimal FederalTax = CalculateJurisdictionTax(Federal);
             decimal ProvincialTax = CalculateJurisdictionTax(Provincial);
 
-            decimal FederalTaxCredits = CalculateTaxCredits(Federal.Brackets[0].Rate, Federal.BasicPersonalAmount);
-            decimal ProvincialTaxCredits = CalculateTaxCredits(Provincial.Brackets[0].Rate, Provincial.BasicPersonalAmount);
+            decimal FederalTaxCredits = CalculateTaxCredits(Federal.Brackets[0].Rate, Federal.BasicPersonalAmount, CPPPaid, EIPaid);
+            decimal ProvincialTaxCredits = CalculateTaxCredits(Provincial.Brackets[0].Rate, Provincial.BasicPersonalAmount, CPPPaid, EIPaid);
 
             FederalTax -= FederalTaxCredits;
             ProvincialTax -= ProvincialTaxCredits;
 
-            this.IncomeTax = (FederalTax > 0 ? FederalTax : 0) + (ProvincialTax > 0 ? ProvincialTax : 0);
+            this.FederalIncomeTax = FederalTax > 0 ? FederalTax : 0;
+
+            this.ProvincialIncomeTax =  ProvincialTax > 0 ? ProvincialTax : 0;
         }
 
         private decimal CalculateJurisdictionTax(JurisdictionRates jurisdiction)
@@ -120,12 +136,19 @@ namespace Tax_Calculator
         {
             int i = 0;
 
-            while (Brackets[i+1].Threshold < GrossIncome)
+            if (GrossIncome >= Brackets[Brackets.Count - 1].Threshold)
             {
-                i++;
+                return Brackets.Count - 1;
             }
+            else
+            {
+                while (Brackets[i + 1].Threshold < GrossIncome)
+                {
+                    i++;
+                }
 
-            return i;
+                return i;
+            }
         }
 
         private static decimal CalculateTaxCredits(decimal TaxCreditRate, params decimal[] Credits)
@@ -137,6 +160,10 @@ namespace Tax_Calculator
             }
             return TotalCredits*TaxCreditRate;
         }
+        #endregion
+
+        #region Utilities
+
         #endregion
     }
 }
